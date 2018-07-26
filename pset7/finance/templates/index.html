@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Stock</th>
+        <th>Cost</th>
+        <th>quantity</th>
+        <th>Value</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="4">Grand total</td>
+        <td><b>{{grandtotal}}</b></td>
+      </tr>
+
+
+
+    </tfoot>
+    <tbody>
+      {% for stock in stocks %}
+      <tr>
+        <td>{{stock['stock']}}</td>
+        <td>{{stock['SUM(quantity)']}}</td>
+        <td>{{stock['price']}}</td>
+        <td>{{stock['total']}}</td>
+      </tr>
+      {% endfor %}
+      <tr></tr>
+      <tr></tr>
+      <tr>
+        <td colspan="4">CASH</td>
+        <td>{{cash}}</td>
+
+
+
+      </tr>
+    </tbody>
+
+    </table>
+{% endblock %}
